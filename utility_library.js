@@ -96,7 +96,7 @@
       }
     };
     (["isElement", "isArray", "isObject", "isFunction", "isBoolean", "isString", "isNumber", "checkThis"]).forEach(function(method) {
-      u[method] = function() { return _[method].apply(u, arguments) }
+      u[method] = function() { return _[method](array) }
     })
     // var outside_functions = ["isElement", "isArray", "isObject", "isFunction", "isBoolean", "isString", "isNumber", "checkThis"];
     // for (func of outside_functions) {
