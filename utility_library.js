@@ -95,10 +95,13 @@
         return !!array[property];
       }
     };
-    var outside_functions = ["isElement", "isArray", "isObject", "isFunction", "isBoolean", "isString", "isNumber"];
-    for (func of outside_functions) {
-      u[func] = function() { _[func]() }
-    }
+    (["isElement", "isArray", "isObject", "isFunction", "isBoolean", "isString", "isNumber", "checkThis"]).forEach(function(method) {
+      u[method] = function() { return _[method].apply(u, arguments) }
+    })
+    // var outside_functions = ["isElement", "isArray", "isObject", "isFunction", "isBoolean", "isString", "isNumber", "checkThis"];
+    // for (func of outside_functions) {
+    //   u[func] = function() { _[func]() }
+    // }
     return u;
   }
   _.range = function(start, end) {
@@ -142,6 +145,9 @@
   }
   _.isNumber = function(object) {
     return object instanceof Number || typeof object === 'number';
+  }
+  _.checkThis = function() {
+    console.log("HI" + this);
   }
   window._ = _;
 })();

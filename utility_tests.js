@@ -266,23 +266,23 @@ test("has returns true when hasOwnProperty is defined", function() {
   });
 });
 test("isElement returns true if DOM element, otherwise false", function() {
-  return _.isElement(document.body) && !_.isElement({});
+  return _().isElement(document.body) && !_().isElement({});
 });
 test("isArray returns true if array, otherwise false", function() {
-  return _.isArray([]) && !_.isArray({ 0: "a", 1: "b" });
+  return _().isArray([]) && !_.isArray({ 0: "a", 1: "b" });
 });
 test("isObject returns true if object or function, otherwise false", function() {
-  return _.isObject({}) && _.isObject([]) && _.isObject(isNaN) && !_.isObject(1);
+  return _.isObject({}) && _().isObject([]) && _.isObject(isNaN) && !_.isObject(1);
 });
 test("isFunction returns true if function, otherwise false", function() {
-  return _.isFunction(isNaN) && !_.isFunction({});
+  return _().isFunction(isNaN) && !_().isFunction({});
 });
 test("isBoolean returns true if boolean (primitive or object), otherwise false", function() {
-  return _.isBoolean(false) && _.isBoolean(new Boolean(false)) && !_.isBoolean(1);
+  return _().isBoolean(false) && _().isBoolean(new Boolean(false)) && !_.isBoolean(1);
 });
 test("isString returns true if string, otherwise false", function() {
-  return _.isString("") && _.isString(new String()) && !_.isString(1);
+  return _().isString("") && _.isString(new String()) && !_.isString(1);
 });
 test("isNumber returns true if number, (primitive or object), otherwise false", function() {
-  return _.isNumber(1) && _.isNumber(new Number(5)) && !_.isNumber("5");
+  return _().isNumber(1) && _().isNumber(new Number(5)) && !_.isNumber("5");
 });
